@@ -9,7 +9,6 @@ export const useAppStore = defineStore("app", () => {
 
   return {
     testBoolean,
-
     toggleTestBoolean,
   }
 })
