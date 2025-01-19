@@ -1,15 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
-  content: [
-    "./src/components/**/*.{js,vue,ts}",
-    "./src/layouts/**/*.vue",
-    "./src/pages/**/*.vue",
-    "./src/plugins/**/*.{js,ts}",
-    "./src/app.vue",
-    "./src/error.vue",
-  ],
-  theme: {
-    extend: {},
+  darkMode: "class",
+  content: ["./src/**/*.{vue,js,ts,jsx,tsx}"], // TODO: "./index.html"
+  daisyui: {
+    themes: ["synthwave"],
   },
-  plugins: [],
-};
+  plugins: [
+    require("@tailwindcss/container-queries"),
+    require("@tailwindcss/typography"),
+    require("daisyui"),
+  ],
+}

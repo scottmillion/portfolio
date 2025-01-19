@@ -1,53 +1,54 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // alias: {
-  //   "@": "./src",
-  // },
+  app: {
+    head: {
+      /*
+      TODO:
+         
+          script: [
+            // <script src="https://myawesome-lib.js"></script>
+            { src: 'https://awesome-lib.js' }
+          ],
+          link: [
+            // <link rel="stylesheet" href="https://myawesome-lib.css">
+            { rel: 'stylesheet', href: 'https://awesome-lib.css' }
+          ],
+          // please note that this is an area that is likely to change
+          style: [
+            // <style type="text/css">:root { color: red }</style>
+            { children: ':root { color: red }', type: 'text/css' }
+          ],
+          noscript: [
+            // <noscript>JavaScript is required</noscript>
+            { children: 'JavaScript is required' }
+          ]
+        }
+      }
+      */
 
-  compatibilityDate: "2024-11-01",
-  css: ["./src/assets/css/main.css"], // tailwind
-
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
+    },
+    pageTransition: { name: "page", mode: "out-in" },
+    rootAttrs: {
+      "data-theme": "synthwave",
+    },
+  },
+  compatibilityDate: "2025-01-18",
   devtools: { enabled: true },
-
-  modules: ["@pinia/nuxt"],
-
+  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
   postcss: {
-    // tailwind
+    // TODO: Dupe of tailwindcss? Do we need postcss with new nuxt?
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
-
-  // TODO
-  // app: {
-  //   head: {
-  //     meta: [
-  //       // <meta name="viewport" content="width=device-width, initial-scale=1">
-  //       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  //     ],
-  //     script: [
-  //       // <script src="https://myawesome-lib.js"></script>
-  //       { src: 'https://awesome-lib.js' }
-  //     ],
-  //     link: [
-  //       // <link rel="stylesheet" href="https://myawesome-lib.css">
-  //       { rel: 'stylesheet', href: 'https://awesome-lib.css' }
-  //     ],
-  //     // please note that this is an area that is likely to change
-  //     style: [
-  //       // <style type="text/css">:root { color: red }</style>
-  //       { children: ':root { color: red }', type: 'text/css' }
-  //     ],
-  //     noscript: [
-  //       // <noscript>JavaScript is required</noscript>
-  //       { children: 'JavaScript is required' }
-  //     ]
-  //   }
-  // }
+  tailwindcss: {
+    // TODO: dupe of postcss?
+  },
 
   //https://nuxt.com/docs/getting-started/configuration
-
   runtimeConfig: {
     // The private keys which are only available server-side
     apiSecret: "",
@@ -56,21 +57,23 @@ export default defineNuxtConfig({
       apiBase: "",
     },
   },
-
   srcDir: "src/",
 
-  // TODO: boilerplate for later
-  // $production: {
-  //   routeRules: {
-  //     "/**": { isr: true },
-  //   },
-  // },
-  // $development: {
-  //   //
-  // },
-  // $env: {
-  //   staging: {
-  //     //
-  //   },
-  // },
-});
+  /*
+    TODO: boilerplate for deployment
+
+    $production: {
+      routeRules: {
+        "/**": { isr: true },
+      },
+    },
+    $development: {
+      //
+    },
+    $env: {
+      staging: {
+        //
+      },
+    },
+  */
+})
