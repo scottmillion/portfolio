@@ -36,7 +36,13 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2025-01-18",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
+  fonts: {
+    defaults: {
+      weights: [400, 500, 600],
+      styles: ["normal", "italic"],
+    },
+  },
+  modules: ["@nuxt/fonts", "@nuxtjs/tailwindcss", "@pinia/nuxt"],
   postcss: {
     // TODO: Dupe of tailwindcss? Do we need postcss with new nuxt?
     plugins: {
