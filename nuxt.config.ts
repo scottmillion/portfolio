@@ -42,7 +42,8 @@ export default defineNuxtConfig({
       styles: ["normal", "italic"],
     },
   },
-  modules: ["@nuxt/fonts", "@nuxtjs/tailwindcss", "@pinia/nuxt"],
+  modules: ["@prisma/nuxt", "@nuxt/fonts", "@nuxtjs/tailwindcss", "@pinia/nuxt"],
+
   postcss: {
     // TODO: Dupe of tailwindcss? Do we need postcss with new nuxt?
     plugins: {
@@ -64,6 +65,7 @@ export default defineNuxtConfig({
     },
   },
   srcDir: "src/",
+  serverDir: "server/",
 
   /*
     TODO: boilerplate for deployment
