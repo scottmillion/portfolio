@@ -13,6 +13,7 @@
   }
   html,
   body {
+    color: #fff;
     font-family: var(--font-body-fontFamily), Arial, Helvetica, "Helvetica Neue", sans-serif;
     letter-spacing: var(--font-body-letterSpacing);
   }

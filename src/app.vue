@@ -3,7 +3,7 @@ import { ROUTE_NAMES } from "@/constants"
 
 const NAV_ITEM_DEFAULT_CLASSLIST = "px-2 pb-2"
 const NAV_ITEM_ACTIVE_CLASSLIST = "border-b border-b-gray-200"
-const NAV_LINK_INACTIVE_CLASSLIST = "hover:text-neutral"
+const NAV_LINK_INACTIVE_CLASSLIST = "hover:text-neutral-950"
 
 const router = useRouter()
 const currentRoute = computed(() => router.currentRoute.value.name)
@@ -45,7 +45,7 @@ const currentRoute = computed(() => router.currentRoute.value.name)
 
     <!-- TODO: make default and other layouts -->
     <div
-      class="@4xl:w-[800px] @5xl:w-[1000px] @4xl:border-x @4xl:rounded bg-neutral mb-6 flex h-full w-full flex-col overflow-auto border-y border-indigo-500 p-8 shadow-[2px_2px_5px_2px_rgba(0,_0,_0,_0.1)]"
+      class="@4xl:w-[800px] @5xl:w-[1000px] @4xl:border-x @4xl:rounded mb-6 flex h-full w-full flex-col overflow-auto border-y border-indigo-500 bg-neutral-950 p-8 shadow-[2px_2px_5px_2px_rgba(0,_0,_0,_0.1)]"
     >
       <NuxtPage />
     </div>
